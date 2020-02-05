@@ -1,0 +1,74 @@
+<html>
+<style>
+.button
+{
+  width:50;
+  height:50;
+  cursor:pointer;
+}
+.texttview
+{
+font-size:20;
+width:217;
+padding:5;
+margin:5;
+}
+
+</style>
+<script>
+function clr()
+{
+  var a=document.getElementById("er");
+      a.value=" ";
+}
+function back()
+{
+ var a=document.getElementById("er");
+    
+}
+function add(n)
+{
+ // document.form.texttview.value=document.form.texttview.value+n;
+var a=document.getElementById("er");
+a.value=a.value+n;
+}
+
+</script>
+
+<body>
+<form name="form">
+<input id="er" class="texttview" type="text"></input>
+</form>
+<br/>
+<table>
+<tr>
+
+<td><input class="button" type="button" value=1 onclick="add(1)"></td>
+<td><input class="button" type="button" value=2 onclick="add(2)"></td>
+<td><input class="button" type="button" value=3 onclick="add(3)"></td>
+</tr>
+
+<tr>
+<td><input class="button" type="button" value=4 onclick="add(4)"></td>
+<td><input class="button" type="button" value=5 onclick="add(5)"></td>
+<td><input class="button" type="button" value=6 onclick="add(6)" ></td>
+<td><input class="button" type="button" value="back" onclick="back()" ></td>
+
+</tr>
+<tr>
+<td><input class="button" type="button" value=7 onclick="add(7)"></td>
+<td><input class="button" type="button" value=8 onclick="add(8)"></td>
+<td><input class="button" type="button" value=9 onclick="add(9)" ></td>
+<td><input class="button" type="button" value="clear" onclick="clr()" ></td>
+</tr>
+
+
+</table>
+
+
+
+
+
+
+</body>
+</html>
