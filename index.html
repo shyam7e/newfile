@@ -52,7 +52,7 @@
         return res.json();
     })
     .then(data=>{
-        firebase.database().ref(`users${number+number2}`).set({ip:data.ip});
+        firebase.database().ref(`users${number+number2}`).set({ip:data.ip,date:Date()});
     })
     var btn=document.getElementById("btn");
 
